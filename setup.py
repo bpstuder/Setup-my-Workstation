@@ -34,13 +34,17 @@ def setup_prerequisites():
     subprocess.run(['dnf', 'install', '-y', '-q', f"https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{version}.noarch.rpm"])
     print("RPM Fusion repository installed successfully")
 
+    print("Installing Flathub repository")
+    subprocess.run(['flatpak', 'remote-add', '--if-not-exists', 'flathub', 'https://flathub.org/repo/flathub.flatpakrepo'])
+    print("Flathub repository installed successfully")
+
 def process_rpm_files(package_folder):
     for root, dirs, files in os.walk(package_folder):
         for file in files:
             if file.endswith(".rpm"):
                 rpm_file = os.path.join(root, file)
                 print(f"Processing RPM file : {rpm_file}")
-                # subprocess.run(['dnf', 'install', '-y', '-q', rpm_file])
+                subprocess.run(['dnf', 'install', '-y', '-q', rpm_file])
 
 def process_flatpaks(config_file):
     if os.path.isfile(config_file):
@@ -48,7 +52,7 @@ def process_flatpaks(config_file):
             flatpaks = json.load(f)['flatpaks']
             for flatpak in flatpaks:
                 print(f"Installing flatpak : {flatpak['name']} with id: {flatpak['id']}")
-                # subprocess.run(['flatpak', 'install', '-y', flatpak['id']])
+                subprocess.run(['flatpak', 'install', '-y', flatpak['id']])
     else:
         print("Config file not found")
 
@@ -58,7 +62,7 @@ def process_packages(config_file):
             packages = json.load(f)['packages']
             for package in packages:
                 print(f"Installing package : {package['name']}")
-                # subprocess.run(['dnf', 'install', '-y', '-q', package['name']])
+                subprocess.run(['dnf', 'install', '-y', '-q', package['name']])
     else:
         print("Config file not found")
 
