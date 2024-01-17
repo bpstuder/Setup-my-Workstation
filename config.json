@@ -1,0 +1,66 @@
+{
+  "flatpaks": [
+    {
+      "name": "Vivaldi",
+      "version": "latest",
+      "id": "com.vivaldi.Vivaldi"
+    },
+    { 
+      "name": "Slack", 
+      "version": "latest", 
+      "id": "com.slack.Slack" 
+    },
+    {
+      "name": "Discord",
+      "version": "latest",
+      "id": "com.discordapp.Discord"
+    },
+    {
+      "name": "Telegram Desktop",
+      "version": "latest",
+      "id": "org.telegram.desktop"
+    },
+    { 
+      "name": "Skype", 
+      "version": "latest", 
+      "id": "com.skype.Client" 
+    },
+    {
+      "name": "XIVLauncher",
+      "version": "latest",
+      "id": "dev.goats.xivlauncher"
+    },
+    {
+      "name": "Flatseal",
+      "version": "latest",
+      "id": "com.github.tchx84.Flatseal"
+    },
+    {
+      "name": "ExtensionManager",
+      "version": "latest",
+      "id": "com.mattjakeman.ExtensionManager"
+    },
+    {
+      "name": "Github Desktop",
+      "version": "latest",
+      "id": "cio.github.shiftey.Desktop"
+    }
+  ],
+  "packages": [
+    {
+      "name": "git"
+    },
+    {
+      "name": "intel-one-mono-fonts"
+    },
+    {
+      "name": "fastfetch"
+    },
+    {
+      "name": "steam"
+    },
+    {
+      "name": "vlc"
+    }
+  ]
+}
