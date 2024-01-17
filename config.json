@@ -62,5 +62,19 @@
     {
       "name": "vlc"
     }
+  ],
+  "urls": [
+    {
+      "name": "VSCode",
+      "url": "https://code.visualstudio.com/sha/download?build=stable&os=linux-rpm-x64"
+    },
+    {
+      "name": "Veracrypt",
+      "url": "https://launchpad.net/veracrypt/trunk/1.26.7/+download/veracrypt-1.26.7-CentOS-8-x86_64.rpm"
+    },
+    {
+      "name": "Vivaldi",
+      "url": "https://downloads.vivaldi.com/stable/vivaldi-stable-6.5.3206.55-1.x86_64.rpm"
+    }
   ]
 }
