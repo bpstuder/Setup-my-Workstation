@@ -43,7 +43,7 @@
     {
       "name": "Github Desktop",
       "version": "latest",
-      "id": "cio.github.shiftey.Desktop"
+      "id": "io.github.shiftey.Desktop"
     }
   ],
   "packages": [
