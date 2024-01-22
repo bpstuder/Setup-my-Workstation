@@ -22,12 +22,23 @@ def setup_prerequisites():
     desktop_environment = os.environ.get('XDG_CURRENT_DESKTOP')
     print(f"Detected Desktop Environment: {desktop_environment}")
 
+    print("Creating package folder")
+    if os.path.exists(package_folder):
+        shutil.rmtree(package_folder)
+    os.mkdir(package_folder)
+
     if not shutil.which('jq'):
         print("jq is not installed. Installing jq...")
         subprocess.run(['dnf', 'install', '-y', '-q', 'jq'])
         print("jq installed successfully")
     else:
         print("jq is already installed")
+
+    print("Checking flatpak installation")
+    if not shutil.which('flatpak'):
+        print("Flatpak is not installed. Installing flatpak...")
+        subprocess.run(['dnf', 'install', '-y', '-q', 'flatpak'])
+        print("Flatpak installed successfully")
 
     print("Installing RPM Fusion repository")
     subprocess.run(['dnf', 'install', '-y', '-q', f"https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-{version}.noarch.rpm"])
